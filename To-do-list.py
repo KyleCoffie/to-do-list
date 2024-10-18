@@ -44,7 +44,6 @@ tasks = []
 # ]
 
 def add_tasks():
-            task = input("Please enter a task: ")
             tasks.append({"Task" :task, "completed" : False})
             print(f"Task '{task}' added to the list.")
             #print(tasks)
@@ -64,12 +63,12 @@ def complete_task():
     list_task()
     complete_task = int(input("Enter the task # to mark as completed ")) 
     try:
-        print(tasks[complete_task -1])
+        #print(tasks[complete_task -1])
         #complete_task == len(tasks)
         tasks[complete_task -1]["completed"] = True
         #print(len(tasks))
         #print(tasks[complete_task])
-        print (f"Task '{}' marked completed!")
+        print (f"Task '{tasks[complete_task -1]["Task"]}' marked completed!")
     except IndexError:
         print("Invalid task #")
 
@@ -100,6 +99,8 @@ if __name__ =="__main__":
         choice = input("Enter your choice ")
     #Implement the following features for the To-Do List:
         if choice == "1":
+            task = input("Please enter a task: ")
+
             add_tasks()
         elif choice == "2":
             list_task()
